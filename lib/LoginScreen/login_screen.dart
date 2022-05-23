@@ -1,7 +1,9 @@
+import 'package:broetchenshop/LoginScreen/forgot_page.dart';
+import 'package:broetchenshop/LoginScreen/registration_screen.dart';
 import 'package:broetchenshop/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'login_content.dart';
+import 'design_content_login_reg.dart';
 
 class MainLoginScreen extends StatefulWidget {
   const MainLoginScreen({Key? key}) : super(key: key);
@@ -87,9 +89,18 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
   Widget _buildForgotPasswordBtn() {
     return Container(
       alignment: Alignment.centerRight,
-      child: FlatButton(
-        onPressed: () => print('Forgot Password Button Pressed'),
-        padding: const EdgeInsets.only(right: 0.0),
+      child: TextButton(
+        style: TextButton.styleFrom(
+          padding: const EdgeInsets.only(right: 0.0),
+          primary: Colors.white,
+          textStyle: const TextStyle(fontSize: 15),
+        ),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ForgotPassword()));
+        },
+
         child: Text(
           'Forgot Password?',
           style: kLabelStyle,
@@ -129,17 +140,20 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
-      child: RaisedButton(
-        elevation: 5.0,
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const MyHomePage(title: "Hallo")));
-
-        },
-        padding: const EdgeInsets.all(15.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: Colors.white,
+          padding: const EdgeInsets.all(15.0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
         ),
-        color: Colors.white,
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const MyHomePage(title: "Hallo")));
+        },
+
         child: const Text(
           'LOGIN',
           style: TextStyle(
@@ -154,33 +168,13 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
     );
   }
 
-  Widget _buildSocialBtn(Function onTap, AssetImage logo) {
-    return GestureDetector(
-      onTap: onTap(),
-      child: Container(
-        height: 60.0,
-        width: 60.0,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white,
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.black26,
-              offset: Offset(0, 2),
-              blurRadius: 6.0,
-            ),
-          ],
-          image: DecorationImage(
-            image: logo,
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget _buildSignupBtn() {
     return GestureDetector(
-      onTap: () => print('Sign Up Button Pressed'),
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const RegistrationPage()));
+      },
       child: RichText(
         text: const TextSpan(
           children: [
@@ -232,6 +226,7 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
                   ),
                 ),
               ),
+
               SizedBox(
                 height: double.infinity,
                 child: SingleChildScrollView(
