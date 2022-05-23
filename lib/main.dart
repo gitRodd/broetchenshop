@@ -1,5 +1,6 @@
 import 'package:broetchenshop/AppTheme/app_theme.dart';
 import 'package:broetchenshop/AppTheme/config.dart';
+import 'package:broetchenshop/LoginScreen/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'AppTheme/config.dart';
 
@@ -36,7 +37,7 @@ class _MyAppState extends State<MyApp> {
       themeMode: currentTheme.currrentTheme(),
       theme: MyTheme().lightMode(),
       darkTheme: MyTheme().darkMode(),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MainLoginScreen(),
     );
   }
 }

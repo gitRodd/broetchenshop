@@ -1,34 +1,24 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LoginContent extends StatefulWidget {
-  const LoginContent({Key? key}) : super(key: key);
+final kHintTextStyle = TextStyle(
+  color: Colors.white54,
+  fontFamily: 'OpenSans',
+);
 
-  @override
-  State<LoginContent> createState() => _LoginContentState();
-}
+final kLabelStyle = TextStyle(
+  color: Colors.white,
+  fontWeight: FontWeight.bold,
+  fontFamily: 'OpenSans',
+);
 
-class _LoginContentState extends State<LoginContent> {
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      child: SingleChildScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 120.0
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const <Widget>[
-            SizedBox(
-              child: Text("Sign In",
-              style: TextStyle(color: Colors.white, fontFamily: 'OpenSans', fontSize: 30.0, fontWeight: FontWeight.bold),
-              ),
-            ),
-            SizedBox(height: 30.0,),
-
-          ],
-        ),
-      ),
-    );
-  }
-}
+final kBoxDecorationStyle = BoxDecoration(
+  color: Color(0xFF6CA8F1),
+  borderRadius: BorderRadius.circular(10.0),
+  boxShadow: [
+    BoxShadow(
+      color: Colors.black12,
+      blurRadius: 6.0,
+      offset: Offset(0, 2),
+    ),
+  ],
+);
