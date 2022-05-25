@@ -1,5 +1,6 @@
 import 'package:broetchenshop/LoginScreen/forgot_page.dart';
-import 'package:broetchenshop/LoginScreen/registration_screen.dart';
+import 'package:broetchenshop/Registration/registration_screen.dart';
+import 'package:broetchenshop/OfferScreen/mainoffer_screen.dart';
 import 'package:broetchenshop/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -151,7 +152,7 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
         onPressed: () {
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const MyHomePage(title: "Hallo")));
+              MaterialPageRoute(builder: (context) => const MainOfferScreen()));
         },
 
         child: const Text(

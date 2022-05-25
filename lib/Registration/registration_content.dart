@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'design_content_login_reg.dart';
+import '../LoginScreen/design_content_login_reg.dart';
 
 class RegistrationContent extends StatefulWidget {
   const RegistrationContent({Key? key}) : super(key: key);
@@ -14,27 +14,12 @@ class _RegistrationContentState extends State<RegistrationContent> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            child: Text(
-              "Create a new account",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20
-              ),
-            ),
-          ),
-          const Padding(padding: EdgeInsets.all(15)),
+          const Padding(padding: EdgeInsets.all(0)),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const SizedBox(
-                height: 30.0,
-              ),
-              const SizedBox(
-                height: 30.0,
-              ),
               Center(
                 child: SizedBox(
                   child: Image.asset('assets/images/atiwlogo.png'),
