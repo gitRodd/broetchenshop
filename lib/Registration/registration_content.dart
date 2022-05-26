@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../LoginScreen/design_content_login_reg.dart';
+import '../Help/design_content_login_reg.dart';
 
 class RegistrationContent extends StatefulWidget {
   const RegistrationContent({Key? key}) : super(key: key);

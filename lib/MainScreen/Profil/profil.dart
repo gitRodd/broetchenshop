@@ -1,3 +1,5 @@
+import 'package:broetchenshop/MainScreen/Profil/profie_pic.dart';
+import 'package:broetchenshop/MainScreen/Profil/profile_body.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -10,6 +12,6 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const ProfileBody();
   }
 }

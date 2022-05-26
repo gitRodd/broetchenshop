@@ -1,7 +1,8 @@
 import 'package:badges/badges.dart';
-import 'package:broetchenshop/MainScreen/cart.dart';
-import 'package:broetchenshop/MainScreen/favorites.dart';
-import 'package:broetchenshop/MainScreen/offer_content.dart';
+import 'package:broetchenshop/MainScreen/Profil/profil.dart';
+import 'package:broetchenshop/MainScreen/Cart/cart.dart';
+import 'package:broetchenshop/MainScreen/Favorite/favorites.dart';
+import 'package:broetchenshop/MainScreen/Offer/offer_content.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -14,30 +15,23 @@ class MainOfferScreen extends StatefulWidget {
 
 class _MainOfferScreenState extends State<MainOfferScreen> {
   int page = 0;
-  List<Widget> tabs = [];
+  List<Widget> tabs = [const OfferContent(), const Favorite(), const Cart(), const Profile()];
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   void initStat(){
-
-    page = 0;
-    tabs = [const OfferContent(), const Favorite(), const Cart()];
     super.initState();
+    page = 0;
+    tabs = [const OfferContent(), const Favorite(), const Cart(), const Profile()];
+
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          elevation: 0,
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(30),
-            top: Radius.circular(30),
-          )),
+        body: Container(
+          child: tabs[page],
         ),
-        body: Container(),
         bottomNavigationBar: CurvedNavigationBar(
           key: _bottomNavigationKey,
           index: 0,
