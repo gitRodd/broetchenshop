@@ -1,4 +1,5 @@
 import 'package:badges/badges.dart';
+import 'package:broetchenshop/SideNavBar/Sidebar.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +24,7 @@ class _MainOfferScreenState extends State<MainOfferScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        endDrawer: const Sidebar(),
         appBar: AppBar(
           automaticallyImplyLeading: false,
           elevation: 0,
@@ -30,12 +32,8 @@ class _MainOfferScreenState extends State<MainOfferScreen> {
               borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(30),
             top: Radius.circular(30),
-          )),
-          actions: <Widget> [
-            IconButton(
-                onPressed: (){},
-                icon: const Icon(Icons.settings))
-          ],
+            ),
+          ),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -44,7 +42,7 @@ class _MainOfferScreenState extends State<MainOfferScreen> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children:  const <Widget>[
-                  TextField(
+                  /*TextField(
                     /*decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10)
@@ -52,7 +50,7 @@ class _MainOfferScreenState extends State<MainOfferScreen> {
                       filled: true,
                       fillColor: Colors.lightBlueAccent
                     ),*/
-                  ),
+                  ),*/
                   SizedBox(
                     child: Icon(
                       Icons.search
@@ -69,7 +67,7 @@ class _MainOfferScreenState extends State<MainOfferScreen> {
           height: 60.0,
           items: <Widget>[
             const Icon(Icons.list, size: 30),
-            const Icon(Icons.call_split, size: 30),
+            const Icon(Icons.access_time_outlined, size: 30),
             Badge(
               badgeContent: const Text("2"),
               child: const Icon(Icons.shopping_cart),
