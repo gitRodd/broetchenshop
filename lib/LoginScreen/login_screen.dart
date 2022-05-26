@@ -1,9 +1,8 @@
 import 'package:broetchenshop/LoginScreen/forgot_page.dart';
 import 'package:broetchenshop/Registration/registration_screen.dart';
-import 'package:broetchenshop/OfferScreen/mainoffer_screen.dart';
-import 'package:broetchenshop/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../MainScreen/mainoffer_screen.dart';
 import 'design_content_login_reg.dart';
 
 class MainLoginScreen extends StatefulWidget {

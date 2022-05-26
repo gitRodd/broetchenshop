@@ -1,4 +1,7 @@
 import 'package:badges/badges.dart';
+import 'package:broetchenshop/MainScreen/cart.dart';
+import 'package:broetchenshop/MainScreen/favorites.dart';
+import 'package:broetchenshop/MainScreen/offer_content.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -10,13 +13,15 @@ class MainOfferScreen extends StatefulWidget {
 }
 
 class _MainOfferScreenState extends State<MainOfferScreen> {
-  int _page = 0;
+  int page = 0;
+  List<Widget> tabs = [];
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
-  @override
   void initStat(){
+
+    page = 0;
+    tabs = [const OfferContent(), const Favorite(), const Cart()];
     super.initState();
-    _page = 0;
   }
 
   @override
@@ -31,49 +36,20 @@ class _MainOfferScreenState extends State<MainOfferScreen> {
             bottom: Radius.circular(30),
             top: Radius.circular(30),
           )),
-          actions: <Widget> [
-            IconButton(
-                onPressed: (){},
-                icon: const Icon(Icons.settings))
-          ],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget> [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children:  const <Widget>[
-                  TextField(
-                    /*decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10)
-                      ),
-                      filled: true,
-                      fillColor: Colors.lightBlueAccent
-                    ),*/
-                  ),
-                  SizedBox(
-                    child: Icon(
-                      Icons.search
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
-        ),
+        body: Container(),
         bottomNavigationBar: CurvedNavigationBar(
           key: _bottomNavigationKey,
           index: 0,
           height: 60.0,
           items: <Widget>[
-            const Icon(Icons.list, size: 30),
-            const Icon(Icons.call_split, size: 30),
+            const Icon(Icons.home, size: 30),
+            const Icon(Icons.favorite, size: 30),
             Badge(
               badgeContent: const Text("2"),
               child: const Icon(Icons.shopping_cart),
-            )
+            ),
+            const Icon(Icons.person, size: 30,)
           ],
           color: Colors.white,
           buttonBackgroundColor: Colors.white,
@@ -82,7 +58,7 @@ class _MainOfferScreenState extends State<MainOfferScreen> {
           animationDuration: const Duration(milliseconds: 200),
           onTap: (index) {
             setState(() {
-              _page = index;
+              page = index;
             });
           },
           letIndexChange: (index) => true,
