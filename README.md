@@ -18,4 +18,4 @@ samples, guidance on mobile development, and a full API reference.
 Quellen:
 
 Login - https://github.com/TheAlphamerc/flutter_login_signup/blob/master/lib/src/loginPage.dart
-Profil - https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/master/lib
+Profile - https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/master/lib

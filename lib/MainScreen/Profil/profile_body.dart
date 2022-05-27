@@ -3,6 +3,7 @@ import 'package:broetchenshop/MainScreen/Profil/profie_pic.dart';
 import 'package:flutter/material.dart';
 
 import '../../AppTheme/config.dart';
+import '../../Help/design_content_login_reg.dart';
 
 class ProfileBody extends StatefulWidget {
   const ProfileBody({Key? key}) : super(key: key);
@@ -28,6 +29,7 @@ class _ProfileBodyState extends State<ProfileBody> {
             endIndent: 0,
             color: Colors.black,
           ),
+          const Padding(padding: EdgeInsets.all(10)),
           TextButton(
               style: TextButton.styleFrom(
                 padding: const EdgeInsets.all(20),
@@ -45,6 +47,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                 ],
               )
           ),
+          const Padding(padding: EdgeInsets.all(10)),
           TextButton(
               style: TextButton.styleFrom(
                 padding: const EdgeInsets.all(20),
@@ -68,6 +71,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                 ],
               )
           ),
+          const Padding(padding: EdgeInsets.all(10)),
           TextButton(
               style: TextButton.styleFrom(
                 padding: const EdgeInsets.all(20),
@@ -86,6 +90,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                 ],
               )
           ),
+          const Padding(padding: EdgeInsets.all(10)),
           TextButton(
               style: TextButton.styleFrom(
                 padding: const EdgeInsets.all(20),
@@ -103,7 +108,10 @@ class _ProfileBodyState extends State<ProfileBody> {
                 ],
               )
           ),
-          TextButton(
+          const Padding(padding: EdgeInsets.all(10)),
+          Container(
+            decoration: kBoxDecorationStyle,
+            child: TextButton(
               style: Theme.of(context).textButtonTheme.style,
               onPressed: (){},
               child: Row(
@@ -114,7 +122,9 @@ class _ProfileBodyState extends State<ProfileBody> {
                   Icon(Icons.arrow_forward_ios),
                 ],
               )
-          ),
+            ),
+          )
+
         ],
       ),
     );

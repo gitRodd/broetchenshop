@@ -30,13 +30,12 @@ class MyTheme with ChangeNotifier{
 
   ThemeData lightMode(){
     return ThemeData(
-      scaffoldBackgroundColor: Colors.grey.shade100
+      scaffoldBackgroundColor: const Color.fromRGBO(0, 110, 199, 1) //Colors.grey.shade100
     );
   }
 
   ThemeData darkMode(){
     return ThemeData.dark().copyWith(
-
     );
   }
 }
