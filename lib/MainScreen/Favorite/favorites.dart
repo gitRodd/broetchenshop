@@ -13,6 +13,7 @@ class _FavoriteState extends State<Favorite> {
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(
+            title: const Text("Favorites"),
             automaticallyImplyLeading: false,
             elevation: 0,
             shape: const RoundedRectangleBorder(

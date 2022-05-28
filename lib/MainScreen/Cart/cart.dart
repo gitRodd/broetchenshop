@@ -13,6 +13,7 @@ class _CartState extends State<Cart> {
     return SafeArea(
         child: Scaffold(
           appBar: AppBar(
+            title: const Text("Cart"),
             automaticallyImplyLeading: false,
             elevation: 0,
             shape: const RoundedRectangleBorder(

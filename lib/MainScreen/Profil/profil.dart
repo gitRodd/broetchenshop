@@ -12,6 +12,9 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return const ProfileBody();
+    return const Padding(
+      padding: EdgeInsets.all(10),
+      child: ProfileBody(),
+    );
   }
 }

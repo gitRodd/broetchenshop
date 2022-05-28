@@ -19,3 +19,31 @@ Quellen:
 
 Login - https://github.com/TheAlphamerc/flutter_login_signup/blob/master/lib/src/loginPage.dart
 Profile - https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI/tree/master/lib
+SearchBar - https://github.com/aravind-b-dev/search-bar/blob/master/lib/main.dart
+
+https://kochwiki.org/wiki/Kategorie:Backwaren
+
+
+
+CodeExample:
+    new Row(
+        children: <Widget>[
+        Expanded(
+            child: SizedBox(
+                height: 200.0,
+                child: new ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: products.length,
+                itemBuilder: (BuildContext ctxt, int index) {
+                return new Text(products[index]);
+                },
+            ),
+        ),
+    ),
+    new IconButton(
+        icon: Icon(Icons.remove_circle),
+        onPressed: () {},
+            ),
+        ],
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    )
