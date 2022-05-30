@@ -16,8 +16,10 @@ class _SettingsState extends State<Settings> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Settings"),
+
       ),
-      body: Center(
+      body: Container(
+        padding: const EdgeInsets.all(5),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
@@ -25,6 +27,12 @@ class _SettingsState extends State<Settings> {
             SizedBox(
               child: Row(
                 children: [
+                  const SizedBox(
+                    width: 60,
+                    child: Icon(
+                        Icons.cloud
+                    ),
+                  ),
                   const Padding(padding: EdgeInsets.only(left: 10)),
                   Expanded(
                       child: Text("Appearance", style: Theme.of(context).textTheme.bodyText2,),

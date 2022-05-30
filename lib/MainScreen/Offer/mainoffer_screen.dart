@@ -43,11 +43,11 @@ class _MainOfferScreenState extends State<MainOfferScreen> {
               badgeContent: const Text("2"),
               child: const Icon(Icons.shopping_cart),
             ),
-            const Icon(Icons.person, size: 30,)
+            Icon(Icons.person, size: 30, color: Theme.of(context).iconTheme.color,)
           ],
-          color: Colors.white,
-          buttonBackgroundColor: Colors.white,
-          backgroundColor: Colors.blueAccent,
+          color: Theme.of(context).primaryColor,
+          buttonBackgroundColor: Theme.of(context).primaryColor,
+          backgroundColor: Theme.of(context).backgroundColor,
           animationCurve: Curves.easeInOut,
           animationDuration: const Duration(milliseconds: 200),
           onTap: (index) {

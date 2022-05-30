@@ -26,19 +26,12 @@ class _CategoriesState extends State<Categories> {
             child: TextButton(
                 style: Theme.of(context).textButtonTheme.style,
                 onPressed: () {},
-                child: Row(
-                  children: const [
-                    SizedBox(
-                        width: 20
+                child: Expanded(
+                      child: Text("All",
+                        style: Theme.of(context).textTheme.bodyText1,
+                        textAlign: TextAlign.center,),
                     ),
-                    Padding(
-                        padding: EdgeInsets.all(2)
-                    ),
-                    Expanded(
-                      child: Text("All"),
-                    ),
-                  ],
-                )),
+            ),
           ),
           const Padding(
             padding: EdgeInsets.all(2),
@@ -49,18 +42,13 @@ class _CategoriesState extends State<Categories> {
             child: TextButton(
                 style: Theme.of(context).textButtonTheme.style,
                 onPressed: () {},
-                child: Row(
-                  children: const [
-                    SizedBox(
-                        width: 20
+                child: Expanded(
+                        child: Text(
+                          "Brot",
+                          style: Theme.of(context).textTheme.bodyText1,
+                          textAlign: TextAlign.center,)
                     ),
-                    Padding(
-                        padding: EdgeInsets.all(2)
-                    ),
-                    Expanded(
-                        child: Text("Brot")),
-                  ],
-                )),
+            ),
           ),
           const Padding(
             padding: EdgeInsets.all(2),
@@ -71,19 +59,14 @@ class _CategoriesState extends State<Categories> {
             child: TextButton(
                 style: Theme.of(context).textButtonTheme.style,
                 onPressed: () {},
-                child: Row(
-                  children: const [
-                    SizedBox(
-                        width: 20
+                child: Expanded(
+                        child: Text(
+                          "Brötchen",
+                          style: Theme.of(context).textTheme.bodyText1,
+                          textAlign: TextAlign.center,
+                        )
                     ),
-                    Padding(
-                        padding: EdgeInsets.all(2)
-                    ),
-                    Expanded(
-                        child: Text("Brötchen")
-                    ),
-                  ],
-                )),
+            ),
           ),
           const Padding(
             padding: EdgeInsets.all(2),
@@ -94,19 +77,15 @@ class _CategoriesState extends State<Categories> {
             child: TextButton(
                 style: Theme.of(context).textButtonTheme.style,
                 onPressed: () {},
-                child: Row(
-                  children: [
-                    const SizedBox(
-                        width: 20
+                child: Expanded(
+                        child: Text(
+                          "Süßes",
+                          style: Theme.of(context).textTheme.bodyText1,
+                          textAlign: TextAlign.center,
+                        )
                     ),
-                    const Padding(
-                        padding: EdgeInsets.all(2)
-                    ),
-                    Expanded(
-                        child: Text("Süßes", style: Theme.of(context).textTheme.bodyText1,)
-                    ),
-                  ],
-                )),
+
+            ),
           ),
         ],
       ),

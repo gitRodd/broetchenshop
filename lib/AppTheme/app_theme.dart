@@ -31,14 +31,30 @@ class MyTheme with ChangeNotifier{
   ThemeData lightMode(){
     return ThemeData(
       scaffoldBackgroundColor:  Colors.grey.shade100,//const Color.fromRGBO(0, 110, 199, 1)
-      textTheme: TextTheme(
-
+      textTheme: const TextTheme(
+        bodyText1: TextStyle(fontSize: 20.0, color: Colors.black87, fontWeight: FontWeight.bold)
+      ),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: Color.fromRGBO(0, 110, 199, 1),
+        selectedItemColor: Color.fromRGBO(0, 110, 199, 1)
+      ),
+      iconTheme: const IconThemeData(
+        color: Colors.black87
       )
     );
   }
 
   ThemeData darkMode(){
     return ThemeData.dark().copyWith(
+      textTheme: TextTheme(
+          bodyText1: TextStyle(fontSize: 20.0, color: Colors.grey.shade50, fontWeight: FontWeight.bold)
+      ),
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.black87,
+      ),
+      iconTheme:  IconThemeData(
+        color: Colors.grey.shade100
+      ),
     );
   }
 }
