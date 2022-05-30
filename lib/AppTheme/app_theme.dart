@@ -40,7 +40,8 @@ class MyTheme with ChangeNotifier{
       ),
       iconTheme: const IconThemeData(
         color: Colors.black87
-      )
+      ),
+
     );
   }
 
