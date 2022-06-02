@@ -1,7 +1,7 @@
 import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:flutter/material.dart';
 
-import '../../Help/design_content_login_reg.dart';
+import '../../Help/design_content.dart';
 
 class SearchbarArea extends StatefulWidget {
   const SearchbarArea({Key? key}) : super(key: key);
@@ -12,6 +12,7 @@ class SearchbarArea extends StatefulWidget {
 
 class _SearchbarAreaState extends State<SearchbarArea> {
   TextEditingController textController = TextEditingController();
+  String dropdownValue = 'One';
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,7 @@ class _SearchbarAreaState extends State<SearchbarArea> {
           child: AnimSearchBar(
             textController: textController,
             width: MediaQuery.of(context).size.width,
+            color: Theme.of(context).primaryColorLight,
             onSuffixTap: () {
               setState(() {
                 textController.clear();
@@ -33,13 +35,31 @@ class _SearchbarAreaState extends State<SearchbarArea> {
           padding: const EdgeInsets.all(2),
           width: 60,
           decoration: kBoxDecorationStyle,
-          child: TextButton(
-              style: Theme.of(context).textButtonTheme.style,
-              onPressed: () {},
-              child: const Icon(Icons.menu_open)
+          child: DropdownButton<String>(
+            value: dropdownValue,
+            elevation: 16,
+            style: TextStyle(color: Theme.of(context).primaryColorDark),
+            onChanged: (String? newValue) {
+              setState(() {
+                dropdownValue = newValue!;
+              });
+            },
+            items: <String>['One', 'Two', 'Free', 'Four']
+                .map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
           ),
+
         ),
       ],
     );
   }
 }
+/*TextButton(
+style: Theme.of(context).textButtonTheme.style,
+onPressed: () {},
+child: const Icon(Icons.menu_open)
+),*/

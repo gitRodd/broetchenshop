@@ -32,11 +32,11 @@ class MyTheme with ChangeNotifier{
     return ThemeData(
       scaffoldBackgroundColor:  Colors.grey.shade100,//const Color.fromRGBO(0, 110, 199, 1)
       textTheme: const TextTheme(
-        bodyText1: TextStyle(fontSize: 20.0, color: Colors.black87, fontWeight: FontWeight.bold)
+        bodyText1: TextStyle(fontSize: 20.0, color: Colors.black87, fontWeight: FontWeight.bold),
+        bodyText2: TextStyle(fontSize: 20.0, color: Colors.black87, )
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Color.fromRGBO(0, 110, 199, 1),
-        selectedItemColor: Color.fromRGBO(0, 110, 199, 1)
       ),
       iconTheme: const IconThemeData(
         color: Colors.black87

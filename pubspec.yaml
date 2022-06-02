@@ -40,6 +40,8 @@ dependencies:
   badges: ^2.0.2
   anim_search_bar: ^2.0.2
   flutter_switch: ^0.3.2
+  flutter_settings_ui: ^2.0.1
+  settings_ui: ^2.0.2
 
 
 dev_dependencies:

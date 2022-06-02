@@ -1,5 +1,5 @@
-import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:broetchenshop/MainScreen/Offer/categories.dart';
+import 'package:broetchenshop/MainScreen/Offer/item_card.dart';
 import 'package:broetchenshop/MainScreen/Offer/searchbar_area.dart';
 import 'package:flutter/material.dart';
 
@@ -31,11 +31,15 @@ class _OfferContentState extends State<OfferContent> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            const SearchbarArea(),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: const SearchbarArea(),
+            ),
             const Padding(
               padding: EdgeInsets.only(left: 10),
             ),
             SizedBox(
+              width: MediaQuery.of(context).size.width,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
@@ -58,6 +62,9 @@ class _OfferContentState extends State<OfferContent> {
             const SizedBox(height: 10,),
             const SizedBox(
               child: Categories()
+            ),
+            const SizedBox(
+              child: ItemCard(),
             )
           ],
         ),

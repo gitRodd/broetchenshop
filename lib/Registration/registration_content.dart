@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Help/design_content_login_reg.dart';
+import '../Help/design_content.dart';
 
 class RegistrationContent extends StatefulWidget {
   const RegistrationContent({Key? key}) : super(key: key);
@@ -33,17 +33,27 @@ class _RegistrationContentState extends State<RegistrationContent> {
                   children: <Widget>[
                     Container(
                       alignment: Alignment.centerLeft,
-                      decoration: kBoxDecorationStyle,
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(0, 110, 199, 1),//Colors.grey,//const Color(0xFF6CA8F1),
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 6.0,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
                       height: 60.0,
                       child: TextFormField(
                         style: const TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
                         ),
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: InputBorder.none,
-                          contentPadding: const EdgeInsets.only(top: 14.0),
-                          prefixIcon: const Icon(
+                          contentPadding: EdgeInsets.only(top: 14.0),
+                          prefixIcon: Icon(
                             Icons.person,
                             color: Colors.white,
                           ),
@@ -55,17 +65,27 @@ class _RegistrationContentState extends State<RegistrationContent> {
                     const Padding(padding: EdgeInsets.all(5)),
                     Container(
                       alignment: Alignment.centerLeft,
-                      decoration: kBoxDecorationStyle,
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(0, 110, 199, 1),//Colors.grey,//const Color(0xFF6CA8F1),
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 6.0,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
                       height: 60.0,
                       child: TextFormField(
                         style: const TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
                         ),
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: InputBorder.none,
-                          contentPadding: const EdgeInsets.only(top: 14.0),
-                          prefixIcon: const Icon(
+                          contentPadding: EdgeInsets.only(top: 14.0),
+                          prefixIcon: Icon(
                             Icons.person,
                             color: Colors.white,
                           ),
@@ -77,7 +97,17 @@ class _RegistrationContentState extends State<RegistrationContent> {
                     const Padding(padding: EdgeInsets.all(5)),
                     Container(
                       alignment: Alignment.centerLeft,
-                      decoration: kBoxDecorationStyle,
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(0, 110, 199, 1),//Colors.grey,//const Color(0xFF6CA8F1),
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 6.0,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
                       height: 60.0,
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
@@ -86,10 +116,10 @@ class _RegistrationContentState extends State<RegistrationContent> {
                           fontFamily: 'OpenSans',
                         ),
                         textInputAction: TextInputAction.next,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: InputBorder.none,
-                          contentPadding: const EdgeInsets.only(top: 14.0),
-                          prefixIcon: const Icon(
+                          contentPadding: EdgeInsets.only(top: 14.0),
+                          prefixIcon: Icon(
                             Icons.email,
                             color: Colors.white,
                           ),
@@ -101,18 +131,28 @@ class _RegistrationContentState extends State<RegistrationContent> {
                     const Padding(padding: EdgeInsets.all(5)),
                     Container(
                       alignment: Alignment.centerLeft,
-                      decoration: kBoxDecorationStyle,
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(0, 110, 199, 1),//Colors.grey,//const Color(0xFF6CA8F1),
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 6.0,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
                       height: 60.0,
-                      child: TextField(
+                      child: const TextField(
                         obscureText: true,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          contentPadding: const EdgeInsets.only(top: 14.0),
-                          prefixIcon: const Icon(
+                          contentPadding: EdgeInsets.only(top: 14.0),
+                          prefixIcon: Icon(
                             Icons.lock,
                             color: Colors.white,
                           ),
@@ -124,18 +164,28 @@ class _RegistrationContentState extends State<RegistrationContent> {
                     const Padding(padding: EdgeInsets.all(5)),
                     Container(
                       alignment: Alignment.centerLeft,
-                      decoration: kBoxDecorationStyle,
+                      decoration: BoxDecoration(
+                        color: const Color.fromRGBO(0, 110, 199, 1),//Colors.grey,//const Color(0xFF6CA8F1),
+                        borderRadius: BorderRadius.circular(10.0),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 6.0,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
                       height: 60.0,
-                      child: TextField(
+                      child: const TextField(
                         obscureText: true,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          contentPadding: const EdgeInsets.only(top: 14.0),
-                          prefixIcon: const Icon(
+                          contentPadding: EdgeInsets.only(top: 14.0),
+                          prefixIcon: Icon(
                             Icons.lock,
                             color: Colors.white,
                           ),

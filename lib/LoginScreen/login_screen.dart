@@ -3,7 +3,7 @@ import 'package:broetchenshop/Registration/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../MainScreen/Offer/mainoffer_screen.dart';
-import '../Help/design_content_login_reg.dart';
+import '../Help/design_content.dart';
 
 class MainLoginScreen extends StatefulWidget {
   const MainLoginScreen({Key? key}) : super(key: key);
@@ -27,15 +27,25 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
         const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
+          decoration: BoxDecoration(
+            color: const Color.fromRGBO(0, 110, 199, 1),//Colors.grey,//const Color(0xFF6CA8F1),
+            borderRadius: BorderRadius.circular(10.0),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 6.0,
+                offset: Offset(0, 2),
+              ),
+            ],
+          ),
           height: 60.0,
-          child: const TextField(
+          child: TextFormField(
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
             ),
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(top: 14.0),
               prefixIcon: Icon(
@@ -62,7 +72,17 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
         const SizedBox(height: 10.0),
         Container(
           alignment: Alignment.centerLeft,
-          decoration: kBoxDecorationStyle,
+          decoration: BoxDecoration(
+            color: const Color.fromRGBO(0, 110, 199, 1),//Colors.grey,//const Color(0xFF6CA8F1),
+            borderRadius: BorderRadius.circular(10.0),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 6.0,
+                offset: Offset(0, 2),
+              ),
+            ],
+          ),
           height: 60.0,
           child: const TextField(
             obscureText: true,

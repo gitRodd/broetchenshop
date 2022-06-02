@@ -48,7 +48,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   physics: AlwaysScrollableScrollPhysics(),
                   padding: EdgeInsets.symmetric(
                     horizontal: 40.0,
-                    vertical: 120.0,
+                    vertical: 20.0,
                   ),
                   child: RegistrationContent()
                 ),

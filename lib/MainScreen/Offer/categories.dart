@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../Help/design_content_login_reg.dart';
+import '../../Help/design_content.dart';
 
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
@@ -10,6 +10,8 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
+  Color selectedCategories = Colors.green;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -22,12 +24,22 @@ class _CategoriesState extends State<Categories> {
           ),
           Container(
             width: 80,
-            decoration: kBoxDecorationStyle,
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,//Colors.grey,//const Color(0xFF6CA8F1),
+              borderRadius: BorderRadius.circular(10.0),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 6.0,
+                  offset: Offset(0, 2),
+                ),
+              ],
+            ),
             child: TextButton(
                 style: Theme.of(context).textButtonTheme.style,
                 onPressed: () {},
-                child: Expanded(
-                      child: Text("All",
+                child: SizedBox(
+                        child: Text("All",
                         style: Theme.of(context).textTheme.bodyText1,
                         textAlign: TextAlign.center,),
                     ),
@@ -38,13 +50,23 @@ class _CategoriesState extends State<Categories> {
           ),
           Container(
             width: 150,
-            decoration: kBoxDecorationStyle,
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,//Colors.grey,//const Color(0xFF6CA8F1),
+              borderRadius: BorderRadius.circular(10.0),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 6.0,
+                  offset: Offset(0, 2),
+                ),
+              ],
+            ),
             child: TextButton(
                 style: Theme.of(context).textButtonTheme.style,
                 onPressed: () {},
-                child: Expanded(
+                child: SizedBox(
                         child: Text(
-                          "Brot",
+                          "Bread",
                           style: Theme.of(context).textTheme.bodyText1,
                           textAlign: TextAlign.center,)
                     ),
@@ -55,13 +77,23 @@ class _CategoriesState extends State<Categories> {
           ),
           Container(
             width: 150,
-            decoration: kBoxDecorationStyle,
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,//Colors.grey,//const Color(0xFF6CA8F1),
+              borderRadius: BorderRadius.circular(10.0),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 6.0,
+                  offset: Offset(0, 2),
+                ),
+              ],
+            ),
             child: TextButton(
                 style: Theme.of(context).textButtonTheme.style,
                 onPressed: () {},
-                child: Expanded(
+                child: SizedBox(
                         child: Text(
-                          "Brötchen",
+                          "Rolls",
                           style: Theme.of(context).textTheme.bodyText1,
                           textAlign: TextAlign.center,
                         )
@@ -73,13 +105,23 @@ class _CategoriesState extends State<Categories> {
           ),
           Container(
             width: 150,
-            decoration: kBoxDecorationStyle,
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,//Colors.grey,//const Color(0xFF6CA8F1),
+              borderRadius: BorderRadius.circular(10.0),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 6.0,
+                  offset: Offset(0, 2),
+                ),
+              ],
+            ),
             child: TextButton(
                 style: Theme.of(context).textButtonTheme.style,
                 onPressed: () {},
-                child: Expanded(
+                child: SizedBox(
                         child: Text(
-                          "Süßes",
+                          "Sweets",
                           style: Theme.of(context).textTheme.bodyText1,
                           textAlign: TextAlign.center,
                         )

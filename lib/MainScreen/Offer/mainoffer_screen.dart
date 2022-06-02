@@ -40,10 +40,11 @@ class _MainOfferScreenState extends State<MainOfferScreen> {
             const Icon(Icons.home, size: 30),
             const Icon(Icons.favorite, size: 30),
             Badge(
-              badgeContent: const Text("2"),
+              badgeContent: const Text("2",
+                style: TextStyle(fontSize: 12),),
               child: const Icon(Icons.shopping_cart),
             ),
-            Icon(Icons.person, size: 30, color: Theme.of(context).iconTheme.color,)
+            Icon(Icons.settings, size: 30, color: Theme.of(context).iconTheme.color,)
           ],
           color: Theme.of(context).primaryColor,
           buttonBackgroundColor: Theme.of(context).primaryColor,

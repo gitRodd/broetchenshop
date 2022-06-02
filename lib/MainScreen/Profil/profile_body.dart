@@ -1,9 +1,8 @@
-import 'package:broetchenshop/MainScreen/Profil/Settings/settings.dart';
 import 'package:broetchenshop/MainScreen/Profil/profie_pic.dart';
 import 'package:flutter/material.dart';
 
 import '../../AppTheme/config.dart';
-import '../../Help/design_content_login_reg.dart';
+import '../../Help/design_content.dart';
 
 class ProfileBody extends StatefulWidget {
   const ProfileBody({Key? key}) : super(key: key);
@@ -57,10 +56,7 @@ class _ProfileBodyState extends State<ProfileBody> {
 
               ),
               onPressed: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Settings()));
+
               },
               child: Row(
                 children: const [
