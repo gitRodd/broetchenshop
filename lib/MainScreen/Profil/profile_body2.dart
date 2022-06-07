@@ -1,4 +1,5 @@
 import 'package:broetchenshop/AppTheme/app_theme.dart';
+import 'package:broetchenshop/LoginScreen/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 
@@ -25,25 +26,33 @@ class _ProfileBodyState extends State<ProfileBody> {
                 tiles: [
                   SettingsTile(
                     title: 'Name',
+                    titleTextStyle: const TextStyle(fontSize: 16),
                     subtitle: 'Max Mustermann',
+                    subtitleTextStyle: Theme.of(context).textTheme.subtitle1,
                     leading: const Icon(Icons.person),
                     onPressed: (BuildContext context) {},
                   ),
                   SettingsTile(
                     title: 'Mobile number',
+                    titleTextStyle: const TextStyle(fontSize: 16),
                     subtitle: '01234567',
+                    subtitleTextStyle: Theme.of(context).textTheme.subtitle1,
                     leading: const Icon(Icons.numbers),
                     onPressed: (BuildContext context) {},
                   ),
                   SettingsTile(
                     title: 'E-Mail',
+                    titleTextStyle: const TextStyle(fontSize: 16),
                     subtitle: 'max.mustermann@gmail.com',
+                    subtitleTextStyle: Theme.of(context).textTheme.subtitle1,
                     leading: const Icon(Icons.mail),
                     onPressed: (BuildContext context) {},
                   ),
                   SettingsTile(
                     title: 'Date of birth',
+                    titleTextStyle: const TextStyle(fontSize: 16),
                     subtitle: '01.01.00',
+                    subtitleTextStyle: Theme.of(context).textTheme.subtitle1,
                     leading: const Icon(Icons.date_range),
                     onPressed: (BuildContext context) {},
                   ),
@@ -56,7 +65,9 @@ class _ProfileBodyState extends State<ProfileBody> {
                 tiles: [
                   SettingsTile(
                     title: 'Language',
+                    titleTextStyle: const TextStyle(fontSize: 16),
                     subtitle: 'English',
+                    subtitleTextStyle: Theme.of(context).textTheme.subtitle1,
                     leading: const Icon(Icons.language),
                     onPressed: (BuildContext context) {},
                   ),
@@ -94,6 +105,22 @@ class _ProfileBodyState extends State<ProfileBody> {
                   )
                 ],
               ),
+              SettingsSection(
+                titlePadding: const EdgeInsets.all(20),
+                title: 'Logout',
+                titleTextStyle: const TextStyle(color: Color.fromRGBO(0, 110, 199, 1), fontSize: 14),
+                tiles: [
+                  SettingsTile(
+                    title: "Logout",
+                    titleTextStyle: Theme.of(context).textTheme.bodyText1,
+                    leading: const Icon(Icons.logout),
+                    onPressed: (context){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const MainLoginScreen()));                    },
+                  )
+                ],
+              )
             ],
           ),
     );

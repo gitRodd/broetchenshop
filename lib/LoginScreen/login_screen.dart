@@ -13,8 +13,22 @@ class MainLoginScreen extends StatefulWidget {
 }
 
 class _MainLoginScreenState extends State<MainLoginScreen> {
+  bool passwordShowHide = true;
   bool _rememberMe = false;
+  final RegExp emailRegex = RegExp(
+      r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
+  final _formKey = GlobalKey<FormState>();
+  final _passwordFieldKey = GlobalKey<FormFieldState<String>>();
 
+  void press(){
+    if(_formKey.currentState!.validate()){
+      Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const MainOfferScreen()));
+    }else{
+
+    }
+  }
 
   Widget _buildEmailTF() {
     return Column(
@@ -39,23 +53,31 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
             ],
           ),
           height: 60.0,
-          child: TextFormField(
-            keyboardType: TextInputType.emailAddress,
-            style: const TextStyle(
-              color: Colors.white,
-              fontFamily: 'OpenSans',
-            ),
-            decoration: const InputDecoration(
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
-              prefixIcon: Icon(
-                Icons.email,
+          child: Form(
+            key: _formKey,
+            child: TextFormField(
+              keyboardType: TextInputType.emailAddress,
+              validator: (value){
+                if(!emailRegex.hasMatch(value!)){
+                  return 'Please enter valid email';
+                }
+              },
+              style: const TextStyle(
                 color: Colors.white,
+                fontFamily: 'OpenSans',
               ),
-              hintText: 'Enter your Email',
-              hintStyle: kHintTextStyle,
+              decoration: const InputDecoration(
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(top: 14.0),
+                prefixIcon: Icon(
+                  Icons.email,
+                  color: Colors.white,
+                ),
+                hintText: 'Enter your Email',
+                hintStyle: kHintTextStyle,
+              ),
             ),
-          ),
+          )
         ),
       ],
     );
@@ -84,18 +106,36 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
             ],
           ),
           height: 60.0,
-          child: const TextField(
-            obscureText: true,
-            style: TextStyle(
+          child: TextFormField(
+            obscureText: passwordShowHide,
+            validator: (value) {
+              if (value != _passwordFieldKey.currentState!.value) {
+                return 'Password do not match';
+              }
+              return null;
+            },
+            style: const TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
               border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14.0),
-              prefixIcon: Icon(
+              contentPadding: const EdgeInsets.only(top: 14.0),
+              prefixIcon: const Icon(
                 Icons.lock,
                 color: Colors.white,
+              ),
+              suffixIcon: IconButton(
+                  onPressed: (){
+                    setState((){
+                      if(passwordShowHide == true){
+                        passwordShowHide == false;
+                      }else if(passwordShowHide == false){
+                        passwordShowHide == true;
+                      }
+                    });
+                  }, 
+                  icon: const Icon(Icons.remove_red_eye, color: Colors.white)
               ),
               hintText: 'Enter your Password',
               hintStyle: kHintTextStyle,

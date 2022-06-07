@@ -33,7 +33,8 @@ class MyTheme with ChangeNotifier{
       scaffoldBackgroundColor:  Colors.grey.shade100,//const Color.fromRGBO(0, 110, 199, 1)
       textTheme: const TextTheme(
         bodyText1: TextStyle(fontSize: 20.0, color: Colors.black87, fontWeight: FontWeight.bold),
-        bodyText2: TextStyle(fontSize: 20.0, color: Colors.black87, )
+        bodyText2: TextStyle(fontSize: 20.0, color: Colors.black87, ),
+        subtitle1: TextStyle(fontSize: 12, color: Colors.black87),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Color.fromRGBO(0, 110, 199, 1),
@@ -48,7 +49,8 @@ class MyTheme with ChangeNotifier{
   ThemeData darkMode(){
     return ThemeData.dark().copyWith(
       textTheme: TextTheme(
-          bodyText1: TextStyle(fontSize: 20.0, color: Colors.grey.shade50, fontWeight: FontWeight.bold)
+          bodyText1: TextStyle(fontSize: 20.0, color: Colors.grey.shade50, fontWeight: FontWeight.bold),
+          subtitle1: TextStyle(fontSize: 12, color: Colors.grey.shade50),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Colors.black87,
