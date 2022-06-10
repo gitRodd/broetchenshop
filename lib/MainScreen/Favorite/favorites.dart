@@ -1,3 +1,4 @@
+import 'package:broetchenshop/MainScreen/Favorite/favorite_content.dart';
 import 'package:flutter/material.dart';
 
 class Favorite extends StatefulWidget {
@@ -22,14 +23,7 @@ class _FavoriteState extends State<Favorite> {
                   top: Radius.circular(30),
                 )),
           ),
-          body: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: const <Widget>[
-
-              ],
-            ),
-          ),
+          body: const FavoriteContent(),
         ));
   }
 }

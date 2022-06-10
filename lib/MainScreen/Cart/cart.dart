@@ -1,3 +1,4 @@
+import 'package:broetchenshop/MainScreen/Cart/confirm_section.dart';
 import 'package:flutter/material.dart';
 
 class Cart extends StatefulWidget {
@@ -21,6 +22,19 @@ class _CartState extends State<Cart> {
                   bottom: Radius.circular(30),
                   top: Radius.circular(30),
                 )),
+          ),
+          body: SizedBox(
+            child: Column(
+              children: const [
+                Center(
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: ConfirmSection(),
+                  ),
+                )
+
+              ],
+            ),
           ),
         )
     );

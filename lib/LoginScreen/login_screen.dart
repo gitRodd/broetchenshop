@@ -30,6 +30,12 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
     }
   }
 
+  void _toggle(){
+    setState((){
+      passwordShowHide = !passwordShowHide;
+    });
+  }
+
   Widget _buildEmailTF() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,15 +132,7 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
                 color: Colors.white,
               ),
               suffixIcon: IconButton(
-                  onPressed: (){
-                    setState((){
-                      if(passwordShowHide == true){
-                        passwordShowHide == false;
-                      }else if(passwordShowHide == false){
-                        passwordShowHide == true;
-                      }
-                    });
-                  }, 
+                  onPressed: _toggle,
                   icon: const Icon(Icons.remove_red_eye, color: Colors.white)
               ),
               hintText: 'Enter your Password',
@@ -160,7 +158,6 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
               context,
               MaterialPageRoute(builder: (context) => const ForgotPassword()));
         },
-
         child: const Text(
           'Forgot Password?',
           style: kLabelStyle,

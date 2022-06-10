@@ -14,19 +14,13 @@ class SearchbarArea extends StatefulWidget {
 
 class _SearchbarAreaState extends State<SearchbarArea> {
   TextEditingController textController = TextEditingController();
-  String dropdownValue = 'One';
-  static const String firstItem = 'First Item';
-  static const String secondItem = 'Second Item';
-  static const String thirdItem = 'Third Item';
 
-  Icon iconup = Icon(Icons.arrow_upward);
-  Icon icondown = Icon(Icons.arrow_downward);
+  Icon iconup = const Icon(Icons.list);
+  Icon icondown = const Icon(Icons.view_list);
   List<Icon> iconlist = [];
+  Icon selectedIcon =  const Icon(Icons.line_weight_sharp);
 
-  static const List<String> choices = <String>[
-    firstItem,
-    secondItem,
-  ];
+
 
   @override
   void initState(){
@@ -35,11 +29,13 @@ class _SearchbarAreaState extends State<SearchbarArea> {
   }
 
   void choiceAction(Icon choice) {
-    if (choice == iconup) {
-      print('I First Item');
-    } else if (choice == icondown) {
-      print('I Second Item');
-    }
+    setState((){
+      if (choice == iconup) {
+        selectedIcon = iconup;
+      } else if (choice == icondown) {
+        selectedIcon = icondown;
+      }
+    });
   }
 
   @override
@@ -74,8 +70,9 @@ class _SearchbarAreaState extends State<SearchbarArea> {
             ],
           ),
           child: PopupMenuButton<Icon>(
-            icon: const Icon(Icons.settings),
+            icon: selectedIcon,
             onSelected: choiceAction,
+            color: Theme.of(context).primaryColor,
             itemBuilder: (BuildContext context) {
               return iconlist.map((Icon choice) {
                 return PopupMenuItem<Icon>(
@@ -91,25 +88,3 @@ class _SearchbarAreaState extends State<SearchbarArea> {
     );
   }
 }
-/*TextButton(
-style: Theme.of(context).textButtonTheme.style,
-onPressed: () {},
-child: const Icon(Icons.menu_open)
-),*/
-/*DropdownButton<String>(
-value: dropdownValue,
-elevation: 16,
-style: TextStyle(color: Theme.of(context).primaryColorDark),
-onChanged: (String? newValue) {
-setState(() {
-dropdownValue = newValue!;
-});
-},
-items: <String>['One', 'Two', 'Free', 'Four']
-.map<DropdownMenuItem<String>>((String value) {
-return DropdownMenuItem<String>(
-value: value,
-child: Text(value),
-);
-}).toList(),
-),*/

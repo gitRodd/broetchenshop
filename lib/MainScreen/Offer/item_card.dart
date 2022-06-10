@@ -31,7 +31,7 @@ class _ItemCardState extends State<ItemCard> {
               children: [
                 const Expanded(
                     child: Center(
-                  child: Text("Muster"),
+                  child: Text(""),
                 )),
                 SizedBox(
                   child: IconButton(
@@ -64,10 +64,15 @@ class _ItemCardState extends State<ItemCard> {
                     ),
                   ),
                 )),
-            const ListTile(
-              title: Text("Muster"),
-              subtitle: Text("Muster"),
-              trailing: Icon(Icons.add),
+            ListTile(
+              title: const Text("Muster"),
+              subtitle: const Text("Muster"),
+              trailing: IconButton(
+                  onPressed: (){
+
+                  },
+                  icon: const Icon(Icons.add_shopping_cart),
+              )
             )
           ],
         ),
