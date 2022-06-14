@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ItemCard extends StatefulWidget {
-  const ItemCard({Key? key}) : super(key: key);
+class ItemCart extends StatefulWidget {
+  const ItemCart({Key? key}) : super(key: key);
 
   @override
-  State<ItemCard> createState() => _ItemCardState();
+  State<ItemCart> createState() => _ItemCartState();
 }
 
-class _ItemCardState extends State<ItemCard> {
+class _ItemCartState extends State<ItemCart> {
   Color iconcolor = Colors.white;
 
   @override
@@ -55,17 +55,17 @@ class _ItemCardState extends State<ItemCard> {
                 height: 80.0,
                 child: Center(
                   child: CircleAvatar(
-                    maxRadius: 50,
+                    maxRadius: 100,
                     backgroundColor: Colors.white,
                     child: SizedBox(
-                      width: 50,
-                      height: 50,
-                      child: Image.asset("assets/images/bag_6.png"),
+                      width: 60,
+                      height: 60,
+                      child: Image.asset("assets/product/wurstsemmel.jpg"),
                     ),
                   ),
                 )),
             ListTile(
-              title: const Text("Muster"),
+              title: const Text("Euro/Stück"),
               subtitle: const Text("Muster"),
               trailing: IconButton(
                   onPressed: (){

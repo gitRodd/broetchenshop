@@ -19,7 +19,7 @@ class _ConfirmSectionState extends State<ConfirmSection> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const <Widget> [
               Text('Sub-total', style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w400, color: Colors.grey)),
-              Text('\$280.00', style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w400, color: Colors.black)),
+              Text('3,80€', style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w400, color: Colors.black)),
             ],
           ),
           const SizedBox(height: 15.0),
@@ -29,7 +29,7 @@ class _ConfirmSectionState extends State<ConfirmSection> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const <Widget> [
               Text('Total Payment', style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w500, color: Colors.black)),
-              Text('\$280.00', style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w700, color: Colors.black)),
+              Text('3,80€', style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w700, color: Colors.black)),
             ],
           ),
           const SizedBox(height: 70.0),

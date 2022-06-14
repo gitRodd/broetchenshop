@@ -1,4 +1,4 @@
-package com.example.broetchenshop;
+package com.example.broetchenverkaufs;
 
 import io.flutter.embedding.android.FlutterActivity;
 

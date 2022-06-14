@@ -64,7 +64,7 @@ class _OfferContentState extends State<OfferContent> {
               child: Categories()
             ),
             const SizedBox(
-              child: ItemCard(),
+              child: ItemCart(),
             )
           ],
         ),
