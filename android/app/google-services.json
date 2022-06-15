@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "851082001759",
+    "project_id": "broetchen-29bf0",
+    "storage_bucket": "broetchen-29bf0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851082001759:android:84d13251749d5c63344aea",
+        "android_client_info": {
+          "package_name": "com.example.broetchenshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851082001759-sqohfo7vhpl37naqtm018bd1av6j1n4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCllHbrtSTVcsc7kyZ0RjvnVvDYC3It-fM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851082001759-sqohfo7vhpl37naqtm018bd1av6j1n4j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "851082001759-408ejkm444l6ksrmo3v3ge5qthi2mjfs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.broetchenshop"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
