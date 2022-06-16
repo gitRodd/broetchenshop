@@ -1,13 +1,17 @@
 import 'package:broetchenshop/LoginScreen/forgot_page.dart';
 import 'package:broetchenshop/Registration/registration_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../MainScreen/Offer/mainoffer_screen.dart';
 import '../Help/design_content.dart';
+import '../main.dart';
 
 class MainLoginScreen extends StatefulWidget {
-  const MainLoginScreen({Key? key}) : super(key: key);
+  final VoidCallback onClickedSignUp;
+  const MainLoginScreen({Key? key, required this.onClickedSignUp}) : super(key: key);
 
   @override
   _MainLoginScreenState createState() => _MainLoginScreenState();
@@ -34,10 +38,24 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
   }
 
   Future signIn() async{
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder:(context) => const Center(child: CircularProgressIndicator(),)
+    );
+
+    try{
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
-    );
+      );
+    }on FirebaseAuthException catch(e){
+      if (kDebugMode) {
+        print(e);
+      }
+      //navigatorKey.currentState!.popUntil((route)=> route.isFirst);
+    }
+
   }
 
   void _toggle(){
@@ -235,15 +253,11 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
 
   Widget _buildSignupBtn() {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const RegistrationPage()));
-      },
+      onTap:  widget.onClickedSignUp,
       child: RichText(
-        text: const TextSpan(
+        text: TextSpan(
           children: [
-            TextSpan(
+            const TextSpan(
               text: 'Don\'t have an Account? ',
               style: TextStyle(
                 color: Colors.white,
@@ -252,8 +266,10 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
               ),
             ),
             TextSpan(
+              recognizer: TapGestureRecognizer()
+              ..onTap = widget.onClickedSignUp,
               text: 'Sign Up',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,

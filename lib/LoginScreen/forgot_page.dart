@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -13,6 +14,39 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
+
+  final formKey = GlobalKey<FormState>();
+  final emailController = TextEditingController();
+  final RegExp emailRegex = RegExp(
+      r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
+
+  void dispose(){
+    emailController.dispose();
+    super.dispose();
+  }
+
+  Future verifyEmail() async {
+
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => const Center(
+        child: CircularProgressIndicator(),
+      )
+    );
+
+    try{
+      await FirebaseAuth.instance.sendPasswordResetEmail(
+          email: emailController.text.trim());
+      Navigator.of(context).popUntil((route) => route.isFirst);
+      //Utils.showSnackBar('Password Reset Email Sent');
+    }on FirebaseAuthException catch(e){
+      print(e);
+      //Utils.showSnackBar(e.message);
+      Navigator.of(context).pop();
+    }
+
+  }
 
   void printMSG() {
     print('Elevated Button Clicked...');
@@ -52,7 +86,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     horizontal: 40.0,
                     vertical: 120.0,
                   ),
-                  child: Column(
+                  child: Form(
+                    key: formKey,
+                    child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       const Text(
@@ -72,16 +108,25 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           alignment: Alignment.centerLeft,
                           decoration: kBoxDecorationStyle,
                           height: 60.0,
-                          child: TextField(
+                          child: TextFormField(
                             keyboardType: TextInputType.emailAddress,
+                            controller: emailController,
+                            cursorColor: Colors.white,
+                            autovalidateMode: AutovalidateMode.onUserInteraction,
+                            textInputAction: TextInputAction.done,
+                            validator: (email){
+                              if(!emailRegex.hasMatch(email!)){
+                                return 'Please enter valid email';
+                              }
+                            },
                             style: const TextStyle(
                               color: Colors.white,
                               fontFamily: 'OpenSans',
                             ),
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               border: InputBorder.none,
-                              contentPadding: const EdgeInsets.only(top: 14.0),
-                              prefixIcon: const Icon(
+                              contentPadding: EdgeInsets.only(top: 14.0),
+                              prefixIcon: Icon(
                                 Icons.email,
                                 color: Colors.white,
                               ),
@@ -126,7 +171,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ],
                   ),
                 ),
-              )
+              ))
             ],
           ),
         ),

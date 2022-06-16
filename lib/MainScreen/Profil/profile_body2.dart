@@ -1,5 +1,6 @@
 import 'package:broetchenshop/AppTheme/app_theme.dart';
 import 'package:broetchenshop/LoginScreen/login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 
@@ -14,6 +15,7 @@ class ProfileBody extends StatefulWidget {
 
 class _ProfileBodyState extends State<ProfileBody> {
   bool isSwitched = MyTheme.isDark;
+  final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -43,7 +45,7 @@ class _ProfileBodyState extends State<ProfileBody> {
                   SettingsTile(
                     title: 'E-Mail',
                     titleTextStyle: const TextStyle(fontSize: 16),
-                    subtitle: 'max.mustermann@gmail.com',
+                    subtitle: user.email!,
                     subtitleTextStyle: Theme.of(context).textTheme.subtitle1,
                     leading: const Icon(Icons.mail),
                     onPressed: (BuildContext context) {},
@@ -113,11 +115,14 @@ class _ProfileBodyState extends State<ProfileBody> {
                   SettingsTile(
                     title: "Logout",
                     titleTextStyle: Theme.of(context).textTheme.bodyText1,
+
                     leading: const Icon(Icons.logout),
-                    onPressed: (context){
+                    onPressed: (context) => FirebaseAuth.instance.signOut(),
+    /*onPressed: (context){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const MainLoginScreen()));                    },
+                          MaterialPageRoute(builder: (context) => const MainLoginScreen()));
+                      },*/
                   )
                 ],
               )

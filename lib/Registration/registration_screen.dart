@@ -1,15 +1,47 @@
 import 'package:broetchenshop/Registration/registration_content.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class RegistrationPage extends StatefulWidget {
-  const RegistrationPage({Key? key}) : super(key: key);
+  final Function() onClickedSignIn;
+  const RegistrationPage({Key? key, required this.onClickedSignIn}) : super(key: key);
 
   @override
   State<RegistrationPage> createState() => _RegistrationPageState();
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
+
+  Widget _buildSignInBtn() {
+    return GestureDetector(
+      onTap: widget.onClickedSignIn,
+      child: RichText(
+        text: TextSpan(
+          children: [
+            const TextSpan(
+              text: 'You have an Account? ',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18.0,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            TextSpan(
+              recognizer: TapGestureRecognizer()
+                ..onTap = widget.onClickedSignIn,
+              text: 'Log in',
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +84,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   child: RegistrationContent()
                 ),
-              )
+              ),
+              Center(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: _buildSignInBtn(),
+                ),
+              ),
             ],
           ),
         ),
