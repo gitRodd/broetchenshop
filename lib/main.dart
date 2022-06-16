@@ -1,10 +1,16 @@
 import 'package:broetchenshop/AppTheme/app_theme.dart';
 import 'package:broetchenshop/AppTheme/config.dart';
-import 'package:broetchenshop/LoginScreen/login_screen.dart';
+import 'package:broetchenshop/Wrapper/Wrapper.dart';
+import 'package:broetchenshop/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'AppTheme/config.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
   runApp(const MyApp());
 }
 
@@ -37,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       themeMode: currentTheme.currrentTheme(),
       theme: MyTheme().lightMode(),
       darkTheme: MyTheme().darkMode(),
-      home: const MainLoginScreen(),
+      home: const Wrapper(),
     );
   }
 }

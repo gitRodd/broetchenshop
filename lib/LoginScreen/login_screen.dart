@@ -1,5 +1,6 @@
 import 'package:broetchenshop/LoginScreen/forgot_page.dart';
 import 'package:broetchenshop/Registration/registration_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../MainScreen/Offer/mainoffer_screen.dart';
@@ -19,6 +20,8 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
       r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
   final _formKey = GlobalKey<FormState>();
   final _passwordFieldKey = GlobalKey<FormFieldState<String>>();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
   void press(){
     if(_formKey.currentState!.validate()){
@@ -28,6 +31,13 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
     }else{
 
     }
+  }
+
+  Future signIn() async{
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+    );
   }
 
   void _toggle(){
@@ -63,6 +73,7 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
             key: _formKey,
             child: TextFormField(
               keyboardType: TextInputType.emailAddress,
+              controller: emailController,
               validator: (value){
                 if(!emailRegex.hasMatch(value!)){
                   return 'Please enter valid email';
@@ -114,6 +125,7 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
           height: 60.0,
           child: TextFormField(
             obscureText: passwordShowHide,
+            controller: passwordController,
             validator: (value) {
               if (value != _passwordFieldKey.currentState!.value) {
                 return 'Password do not match';
@@ -205,11 +217,7 @@ class _MainLoginScreenState extends State<MainLoginScreen> {
             borderRadius: BorderRadius.circular(30.0),
           ),
         ),
-        onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const MainOfferScreen()));
-        },
+        onPressed: signIn,
 
         child: const Text(
           'LOGIN',

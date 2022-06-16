@@ -1,7 +1,6 @@
 import 'package:broetchenshop/LoginScreen/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import '../MainScreen/Offer/mainoffer_screen.dart';
 
 class Wrapper extends StatelessWidget {
