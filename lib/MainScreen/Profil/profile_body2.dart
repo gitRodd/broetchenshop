@@ -29,10 +29,12 @@ class _ProfileBodyState extends State<ProfileBody> {
                   SettingsTile(
                     title: 'Name',
                     titleTextStyle: const TextStyle(fontSize: 16),
-                    subtitle: 'Max Mustermann',
+                    subtitle: user.displayName,
                     subtitleTextStyle: Theme.of(context).textTheme.subtitle1,
                     leading: const Icon(Icons.person),
-                    onPressed: (BuildContext context) {},
+                    onPressed: (BuildContext context) {
+
+                    },
                   ),
                   SettingsTile(
                     title: 'Mobile number',

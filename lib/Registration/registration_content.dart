@@ -23,8 +23,10 @@ class _RegistrationContentState extends State<RegistrationContent> {
   final passwordController = TextEditingController();
   final passwordController2 = TextEditingController();
   final formKey = GlobalKey<FormState>();
+  final user = FirebaseAuth.instance.currentUser!;
 
-  void dipose(){
+  @override
+  void dispose(){
     firstnameController.dispose();
     lastnameController.dispose();
     emailController.dispose();
@@ -39,6 +41,7 @@ class _RegistrationContentState extends State<RegistrationContent> {
 
     showDialog(
         context: context,
+        barrierDismissible: false,
         builder: (context) => const Center(child: CircularProgressIndicator(),)
     );
 
@@ -46,12 +49,20 @@ class _RegistrationContentState extends State<RegistrationContent> {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text.trim(),
           password: passwordController.text.trim(),
+
       );
     }on FirebaseAuthException catch(e){
       if (kDebugMode) {
         print(e);
       }
-      //avigatorKey.currentState!.popUntil((route) => route.isFirst);
+      //navigatorKey.currentState!.popUntil((route) => route.isFirst);
+    }
+    Future updateName() async{
+      try{
+
+      }on FirebaseException catch(e){
+        print(e);
+      }
     }
   }
 
@@ -99,6 +110,7 @@ class _RegistrationContentState extends State<RegistrationContent> {
                       ),
                       height: 60.0,
                       child: TextFormField(
+                        controller: firstnameController,
                         style: const TextStyle(
                           color: Colors.white,
                           fontFamily: 'OpenSans',

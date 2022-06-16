@@ -4,7 +4,6 @@ import 'package:broetchenshop/Wrapper/Wrapper.dart';
 import 'package:broetchenshop/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'AppTheme/config.dart';
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();

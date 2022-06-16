@@ -150,11 +150,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                       ),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const MyHomePage(title: "Hallo")));
-                      },
+                      onPressed: verifyEmail,
 
                       child: const Text(
                         'Send request',
