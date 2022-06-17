@@ -1,5 +1,6 @@
 import 'package:broetchenshop/AppTheme/app_theme.dart';
 import 'package:broetchenshop/LoginScreen/login_screen.dart';
+import 'package:broetchenshop/MainScreen/Profil/change_name.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_ui/flutter_settings_ui.dart';
@@ -33,7 +34,9 @@ class _ProfileBodyState extends State<ProfileBody> {
                     subtitleTextStyle: Theme.of(context).textTheme.subtitle1,
                     leading: const Icon(Icons.person),
                     onPressed: (BuildContext context) {
-
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ChangeName()));
                     },
                   ),
                   SettingsTile(

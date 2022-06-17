@@ -1,3 +1,4 @@
+import 'package:broetchenshop/Help/design_content.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -36,19 +37,79 @@ class _ChangeNameState extends State<ChangeName> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SizedBox(
+          width: MediaQuery.of(context).size.width,
             child: Form(
               key: formKey,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(user.displayName.toString()),
                   Row(
                     children: [
-                      TextFormField(
-                        controller: firstnameController,
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        decoration: BoxDecoration(
+                          color: const Color.fromRGBO(0, 110, 199, 1),//Colors.grey,//const Color(0xFF6CA8F1),
+                          borderRadius: BorderRadius.circular(10.0),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 6.0,
+                              offset: Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        height: 60.0,
+                        child: TextFormField(
+                          controller: lastnameController,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'OpenSans',
+                          ),
+                          decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.only(top: 14.0),
+                            prefixIcon: Icon(
+                              Icons.person,
+                              color: Colors.white,
+                            ),
+                            hintText: 'First Name',
+                            hintStyle: kHintTextStyle,
+                          ),
+                        ),
                       ),
-                      TextFormField(
-                        controller: lastnameController,
-                      )
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        decoration: BoxDecoration(
+                          color: const Color.fromRGBO(0, 110, 199, 1),//Colors.grey,//const Color(0xFF6CA8F1),
+                          borderRadius: BorderRadius.circular(10.0),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 6.0,
+                              offset: Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        height: 60.0,
+                        child: TextFormField(
+                          controller: firstnameController,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'OpenSans',
+                          ),
+                          decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.only(top: 14.0),
+                            prefixIcon: Icon(
+                              Icons.person,
+                              color: Colors.white,
+                            ),
+                            hintText: 'First Name',
+                            hintStyle: kHintTextStyle,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   TextButton(
