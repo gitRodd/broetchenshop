@@ -13,4 +13,6 @@ class Product {
     required this.description,
     required this.category
   });
+
+
 }
